@@ -10,7 +10,9 @@ I recommend watching [this video](https://www.youtube.com/watch?v=UYJDKSah-Ww) u
 Once finished, you will also need to create a .env file in addition to the provided files. The .env file should contain the following variables:
 
 **DISCORD_TOKEN** - the token of your Discord bot
+
 **SPOTIFY_CLIENT_ID** - the client ID of your Spotify for Developers account
+
 **SPOTIFY_SECRET_ID** - the client secret of your Spotify for Developers account
 
 _(All the variable names should be named exactly as stated.)_
