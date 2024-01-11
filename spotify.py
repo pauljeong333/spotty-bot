@@ -2,7 +2,7 @@ import base64
 import json
 from requests import post, get, exceptions
 
-from types.response import res
+from my_types.response import res
 
 
 # handles all Spotify related needs - tokens, API calls, etc.
