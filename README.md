@@ -1,6 +1,6 @@
 # Spotty Bot
 
-Hello! Welcome to Spotty Bot, a Discord bot used to discover and listen to music and musical artists. Spotty Bot leverages the Discord and Spotify APIs to help users explore new music while utilizing the Discord Bot medium to provide an interactive, responsive, and enjoyable experience. This program was coded on Python.
+Hello! Welcome to Spotty Bot, a Discord bot used to discover and learn more about your favorite music and musical artists. Spotty Bot leverages the Discord and Spotify APIs to help users explore new music while utilizing the Discord Bot medium to provide an interactive, responsive, and enjoyable experience. This program was coded on Python.
 
 ## Usage
 
