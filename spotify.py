@@ -29,6 +29,27 @@ def search_for_artist(token: str, artist: str) -> res:
         return res(False, None, "Error... please try again")
 
 
+# searches for a track given a search query
+# returns response containing track object
+def search_for_track(token: str, track: str) -> res:
+    try:
+        url = "https://api.spotify.com/v1/search"
+        headers = get_auth_header(token)
+        query = f"q={track}&type=track&limit=1"
+
+        query_url = url + "?" + query
+        response = get(query_url, headers=headers)
+        json_result = json.loads(response.content)["tracks"]["items"]
+
+        if len(json_result) == 0:
+            return res(False, None, f"**{track}** could not be found")
+
+        return res(True, json_result[0])
+    except exceptions.RequestException as e:
+        print(e)
+        return res(False, None, "Error... please try again")
+
+
 # returns artist top songs given and artistID
 def get_artist_top_tracks(token: str, artistID: str) -> res:
     try:
@@ -39,6 +60,25 @@ def get_artist_top_tracks(token: str, artistID: str) -> res:
         json_result = json.loads(response.content)["tracks"]
 
         return res(True, json_result)
+
+    except exceptions.RequestException as e:
+        print(e)
+        return res(False, None, e)
+
+
+# uses a provided genre, artist, and track to search for a recommended track
+def get_recommendation(token: str, genre: str, artistID: str, trackID: str) -> res:
+    try:
+        url = f"https://api.spotify.com/v1/recommendations?limit=1&market=US&seed_artists={artistID}&seed_genres={genre}&seed_tracks={trackID}"
+        headers = get_auth_header(token)
+
+        response = get(url, headers=headers)
+        json_result = json.loads(response.content)["tracks"]
+
+        if len(json_result) == 0:
+            return res(False, None, f"A recommendation could not be found.")
+
+        return res(True, json_result[0])
 
     except exceptions.RequestException as e:
         print(e)

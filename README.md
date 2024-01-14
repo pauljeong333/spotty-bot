@@ -21,12 +21,12 @@ The .env file should be placed in the root directory of the project.
 
 ## Commands
 
-Here are a list of Spotty Bot commands:
-
-_(All commands must be prefaced by "!")_
+Here are a list of Spotty Bot slash commands:
 
 **hello** - Say Hi!
 
-**[s]earch** - Search for a musical artist. Spotty Bot will provide you with the artist's name, genres, and top 5 songs.
+**search** - Search for a musical artist. Spotty Bot will provide you with the artist's name, genres, and top 5 songs.
+
+**rec** - Get a recommendation based on a genre, artist, and track. Spotty Bot will provide a track based on your tastes.
 
 **help** - View the list of available commands.
